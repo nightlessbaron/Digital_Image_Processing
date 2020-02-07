@@ -1,0 +1,29 @@
+clc;
+clear all;
+close all;
+I = imread('Lenna_(test_image).png');
+I = rgb2gray(I);
+imshow(I);
+title('Original');
+
+figure(2);
+for i = 1:8
+    subplot(2,4,i);
+    nth = bitand(I,2^(8-i)); 
+    x= power(2,8-i); %For 1 and 0
+    nth = double(nth/x);
+    imshow(nth);
+    title(strcat('Bit Plane',num2str(9-i)));
+end
+
+removeLSB = bitand(I,254); %LSB forcibly made 0 by anding with '11111110'
+
+
+figure(4)
+
+subplot(121);
+imshow(I);
+title('Original');
+subplot(122);
+imshow(removeLSB);
+title('LSB Removed');
