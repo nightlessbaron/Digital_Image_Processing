@@ -1,0 +1,7 @@
+## Assignment 1 : Run Length Encoding
+### Date : 31-03-2020
+
+### Task 
+Generate a 100 bit random sequence and determine the run length encoding for the same.
+Check whether it is a positive or negative compression.
+If it is a positive compression, then find the compression ratio.
